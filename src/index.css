@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Geist", "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* Official 1Fi Live Colors (from app.1fi.in) */
+  --color-ink: #111827;          /* text-gray-900 */
+  --color-ink-soft: #6B7280;     /* text-gray-500 */
+  --color-ink-faint: #9CA3AF;    /* text-gray-400 */
+
+  --color-canvas: #FAFAFA;       /* background */
+  --color-surface: #FFFFFF;      /* card background */
+
+  --color-line: #E5E7EB;         /* border-gray-200 */
+  --color-line-strong: #D1D5DB;
+
+  --color-brand: #712CDC;        /* Official 1Fi Signature Purple (#712CDC) */
+  --color-brand-hover: #5b24b5;
+  --color-brand-soft: #f5f0ff;   /* soft purple bg */
+  --color-brand-border: #ece5ff; /* soft purple border */
+  --color-accent: #712CDC;
+  --color-accent-soft: #f5f0ff;
+  --color-warn: #DC2626;
+  --color-warn-soft: #FEF2F2;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-feature-settings: "tnum" 1, "cv11" 1;
+  }
+  ::selection {
+    background-color: var(--color-accent-soft);
+    color: var(--color-ink);
+  }
+  button {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
